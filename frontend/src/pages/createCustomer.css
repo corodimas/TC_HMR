@@ -1,0 +1,26 @@
+.block {
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.block_info{
+    display: flex;
+    flex-direction: column;
+    border:  1px solid black;
+    padding: 10vh;
+    border-radius: 10%;
+    box-shadow: 1px 2px;
+    margin: 10px;
+}
+
+span{
+    color: red;
+}
+
+.option_placeholder{
+    color: red;
+}

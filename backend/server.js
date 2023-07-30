@@ -11,9 +11,11 @@ app.use(cors());
 const postRouter = require('./routs/patient')
 const courseRouter = require('./routs/course')
 const employeesRouter = require('./routs/employee')
+const UsersRouter = require('./routs/Users')
 app.use("/patient",postRouter)
 app.use("/course",courseRouter)
 app.use("/employee",employeesRouter)
+app.use('/auth',UsersRouter)
 
 db.sequelize.sync().then(()=>
 {

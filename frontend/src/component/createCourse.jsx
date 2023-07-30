@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
-const CreateCourse = ({ test }) => {
+const CreateCourse = ({ onclose , onconfirm }) => {
   const { id } = useParams();
   const [patient, setPatient] = useState({});
   const [clinic, setClinic] = useState({});
@@ -27,7 +27,10 @@ const CreateCourse = ({ test }) => {
   const onSubmit = (data) => {
     axios.post('http://localhost:3001/course', data).then((response) => {
       console.log('Successful sent');
+      onclose();
+      onconfirm();
     });
+    
   };
 
   const initialValuess = {
@@ -77,7 +80,7 @@ const CreateCourse = ({ test }) => {
               </option>
             ))}
           </Field>
-          <button type='submit' onClick={test}>เพิ่มคอสต์</button>
+          <button type='submit' >เพิ่มคอสต์</button>
         </Form>
       </Formik>
     </div>

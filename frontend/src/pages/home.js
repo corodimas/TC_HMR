@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react
 import axios from 'axios';
 import './home.css';
 import Select, { createFilter } from "react-select";
-
+import TrustmeLog from '../asset/logo_auto.png'
 
 function Home() {
   const MIN_INPUT_LENGTH = 3;
@@ -53,6 +53,7 @@ function Home() {
   return (
     <div>
       <div className="block">
+        <img src={TrustmeLog} className='mainimg'/>
         <div className="block_item">
           <Select options={options} onChange={handleSelectChange} filterOption={filterOption} noOptionsMessage={noOptionsMessage} components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}/>
         </div>

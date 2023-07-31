@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './home.css';
 import Select, { createFilter } from "react-select";
 import TrustmeLog from '../asset/logo_auto.png'
+
 
 function Home() {
   const MIN_INPUT_LENGTH = 3;
@@ -55,9 +56,7 @@ function Home() {
         <div className="block_item">
           <Select options={options} onChange={handleSelectChange} filterOption={filterOption} noOptionsMessage={noOptionsMessage} components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}/>
         </div>
-        <a href="/createCustomer" className="myButton">
-          ลูกค้าใหม่
-        </a>
+              <Link to="/createCustomer" className='myButton' >ลูกค้าใหม่</Link>
       </div>
     </div>
   );

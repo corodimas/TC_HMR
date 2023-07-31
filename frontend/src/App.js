@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
 
-import CreateCustomer from "./pages/createCustomer";
+import CreateCustomer from "./pages/createc";
 import Home from "./pages/home";
 import Patient from "./pages/patient";
 import Login from './pages/login'

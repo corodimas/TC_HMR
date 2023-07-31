@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {Formik, Form, Field, ErrorMessage, validateYupSchema} from 'formik'
+import {Formik, Form, Field, ErrorMessage} from 'formik'
 import './createCustomer.css';
 import * as Yup from 'yup';
 import axios from 'axios';

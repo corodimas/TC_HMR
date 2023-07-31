@@ -1,7 +1,7 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link, useNavigate} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom'
 
-import CCustomer from "./pages/createCustomer";
+import CreateCustomer from "./pages/createCustomer";
 import Home from "./pages/home";
 import Patient from "./pages/patient";
 import Login from './pages/login'
@@ -70,7 +70,7 @@ function App() {
           <Routes>
             <Route element={<PrivateRoutes token={authState.status} />}>
               <Route path="/" element={<Home />} />
-              <Route path="/createCustomer" element={<CCustomer />} exact />
+              <Route path="/createCustomer" element={<CreateCustomer />} exact />
               <Route path="/patient/:id"element={<Patient />}exact/>
             </Route>
             <Route element={<GuestRoute token={authState.status} />}>

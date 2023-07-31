@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './home.css';
 import Select, { createFilter } from "react-select";
@@ -28,8 +28,6 @@ function Home() {
 
 
   let history = useNavigate();
-  const resultLimit = 10
-  let i = 0
 
   const [listOfPatients, setListOfPatients] = useState([]);
 

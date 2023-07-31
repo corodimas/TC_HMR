@@ -1,5 +1,5 @@
 import React from 'react'
-import {Formik, Form, Field, ErrorMessage, validateYupSchema} from 'formik'
+import {Formik, Form, Field, ErrorMessage} from 'formik'
 import './createCustomer.css';
 import * as Yup from 'yup';
 import axios from 'axios';
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
-function CCustomer() {
+function CreateCustomer() {
   const initialValuess = { name: "", age: "" ,department_id:"" };
   const history = useNavigate();
   const [list_of_clinics, setListOfClinics] = useState([]);
@@ -55,4 +55,4 @@ function CCustomer() {
 }
 
 
-export default CCustomer
+export default CreateCustomer

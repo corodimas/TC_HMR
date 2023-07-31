@@ -68,14 +68,18 @@ function App() {
           <FullscreenButton />
           </div>
           <Routes>
-            <Route element={<PrivateRoutes token={authState.status} />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/createCustomer" element={<CreateCustomer />} exact />
-              <Route path="/patient/:id"element={<Patient />}exact/>
-            </Route>
-            <Route element={<GuestRoute token={authState.status} />}>
-              <Route path="/login" element={<Login />} exact />
-              <Route path="/register" element={<Register />} exact />
+            <Route path="/login" element={<GuestRoute token={authState.status} />}>
+                <Route index element={<Login />} />
+              </Route>
+              <Route path="/register" element={<GuestRoute token={authState.status} />}>
+                <Route index element={<Register />} />
+              </Route>
+
+            {/* Place PrivateRoutes next */}
+            <Route path="/" element={<PrivateRoutes token={authState.status} />}>
+              <Route index element={<Home />} />
+              <Route path="/createCustomer" element={<CreateCustomer />} />
+              <Route path="/patient/:id" element={<Patient />} />
             </Route>
             <Route path="*" element={<PageNotFound />} exact />
           </Routes>

@@ -11,21 +11,21 @@ const CreateCourse = ({ onclose , onconfirm }) => {
   const [employee, setEmployee] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/patient/byId/${id}`).then((response) => {
+    axios.get(`https://visa-test-5417272958c4.herokuapp.com/patient/byId/${id}`).then((response) => {
       setPatient(response.data);
       axios
-        .get(`http://localhost:3001/patient/clinic/byId/${response.data.department_id}`)
+        .get(`https://visa-test-5417272958c4.herokuapp.com/patient/clinic/byId/${response.data.department_id}`)
         .then((clinicResponse) => {
           setClinic(clinicResponse.data);
         });
-      axios.get('http://localhost:3001/employee').then((response) => {
+      axios.get('https://visa-test-5417272958c4.herokuapp.com/employee').then((response) => {
         setEmployee(response.data);
       });
     });
   }, []);
 
   const onSubmit = (data) => {
-    axios.post('http://localhost:3001/course', data).then((response) => {
+    axios.post('https://visa-test-5417272958c4.herokuapp.com/course', data).then((response) => {
       console.log('Successful sent');
       onclose();
       onconfirm();

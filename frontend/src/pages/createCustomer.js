@@ -13,7 +13,7 @@ function CCustomer() {
   const [list_of_clinics, setListOfClinics] = useState([]);
 
   useEffect(()=>{
-    axios.get("http://localhost:3001/patient/clinic").then((response)=>{
+    axios.get("https://visa-test-5417272958c4.herokuapp.com/patient/clinic").then((response)=>{
       setListOfClinics(response.data);
     })
   },[])
@@ -25,7 +25,7 @@ function CCustomer() {
   })
 
   const onSubmit = (data)=>{
-    axios.post('http://localhost:3001/patient', data).then((response) => {console.log("Successful sent");
+    axios.post('https://visa-test-5417272958c4.herokuapp.com/patient', data).then((response) => {console.log("Successful sent");
   history('/');})
   }
 

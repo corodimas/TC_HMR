@@ -22,7 +22,7 @@ function App() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(()=>{
-    axios.get('http://localhost:3001/auth/validate', { headers:{
+    axios.get('https://visa-test-5417272958c4.herokuapp.com/auth/validate', { headers:{
       accessToken: Cookies.get('accessToken'),
     },
   }).then((response)=>{

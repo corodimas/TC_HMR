@@ -20,11 +20,11 @@ function Makebutton({courseId,coursestId, setCoursest,setCourse, id ,status }){
 
   const handleFinish =()=>{
     try{
-      axios.put(`http://localhost:3001/course/coursest/${courseId}/${coursestId}`).then(() => {
-        axios.put(`http://localhost:3001/course/courseUpdata/${courseId}`).then(() => {
-          axios.get(`http://localhost:3001/course/coursest/${id}`).then((courseResponse) => {
+      axios.put(`https://visa-test-5417272958c4.herokuapp.com/course/coursest/${courseId}/${coursestId}`).then(() => {
+        axios.put(`https://visa-test-5417272958c4.herokuapp.com/course/courseUpdata/${courseId}`).then(() => {
+          axios.get(`https://visa-test-5417272958c4.herokuapp.com/course/coursest/${id}`).then((courseResponse) => {
             setCoursest(courseResponse.data);
-              axios.get(`http://localhost:3001/course/${id}`).then((courseResponse) => {
+              axios.get(`https://visa-test-5417272958c4.herokuapp.com/course/${id}`).then((courseResponse) => {
                   setCourse(courseResponse.data);
                   setButtonDisabled(true); 
             });
@@ -48,10 +48,10 @@ function MakeFinishbutton({courseId,setCourse,id,setcoursefinished }){
 
   const handleFinish =()=>{
     try{
-      axios.put(`http://localhost:3001/course/coursefinished/${courseId}`).then(() => {
-      axios.get(`http://localhost:3001/course/${id}`).then((courseResponse) => {
+      axios.put(`https://visa-test-5417272958c4.herokuapp.com/course/coursefinished/${courseId}`).then(() => {
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/course/${id}`).then((courseResponse) => {
       setCourse(courseResponse.data);
-      axios.get(`http://localhost:3001/course/cf/${id}`).then((courseResponse) =>{
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/course/cf/${id}`).then((courseResponse) =>{
       setcoursefinished(courseResponse.data)
       });
       });
@@ -86,15 +86,15 @@ const Tabss = ({onconfirm}) => {
 
     
     useEffect(() => {
-      axios.get(`http://localhost:3001/patient/byId/${id}`).then((response) => {
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/patient/byId/${id}`).then((response) => {
         setPatient(response.data);
-      axios.get(`http://localhost:3001/patient/clinic/byId/${response.data.department_id}`).then((clinicResponse) => {
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/patient/clinic/byId/${response.data.department_id}`).then((clinicResponse) => {
         setClinic(clinicResponse.data);
-      axios.get(`http://localhost:3001/course/${id}`).then((courseResponse) =>{
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/course/${id}`).then((courseResponse) =>{
         setCourse(courseResponse.data)
-      axios.get(`http://localhost:3001/course/cf/${id}`).then((courseResponse) =>{
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/course/cf/${id}`).then((courseResponse) =>{
         setcoursefinished(courseResponse.data)
-      axios.get(`http://localhost:3001/course/coursest/${id}`).then((coursestResponse) =>{
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/course/coursest/${id}`).then((coursestResponse) =>{
         setCoursest(coursestResponse.data)
         console.log(coursestResponse.data)
       });
@@ -107,7 +107,7 @@ const Tabss = ({onconfirm}) => {
 
     const handleDeleteCourse = async (courseId) => {
       try {
-        await axios.delete(`http://localhost:3001/course/${courseId}`);
+        await axios.delete(`https://visa-test-5417272958c4.herokuapp.com/course/${courseId}`);
         setCourse((prevCourses) => prevCourses.filter((course) => course.id !== courseId));
       } catch (error) {
         console.error('Failed to delete the course:', error);
@@ -115,9 +115,9 @@ const Tabss = ({onconfirm}) => {
     };
 
     const handleAction = () => {
-      axios.get(`http://localhost:3001/course/${id}`).then((courseResponse) => {
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/course/${id}`).then((courseResponse) => {
         setCourse(courseResponse.data);
-      axios.get(`http://localhost:3001/course/coursest/${id}`).then((courseResponse) => {
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/course/coursest/${id}`).then((courseResponse) => {
           setCoursest(courseResponse.data);
       });
       });

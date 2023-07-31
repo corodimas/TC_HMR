@@ -13,9 +13,9 @@ function Patient() {
     
     
     useEffect(() => {
-      axios.get(`http://localhost:3001/patient/byId/${id}`).then((response) => {
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/patient/byId/${id}`).then((response) => {
         setPatient(response.data);
-      axios.get(`http://localhost:3001/patient/clinic/byId/${response.data.department_id}`).then((clinicResponse) => {
+      axios.get(`https://visa-test-5417272958c4.herokuapp.com/patient/clinic/byId/${response.data.department_id}`).then((clinicResponse) => {
         setClinic(clinicResponse.data);
       });
       });

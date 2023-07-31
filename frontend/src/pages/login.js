@@ -26,7 +26,7 @@ const Login = () => {
   });
 
   const onSubmit = (data)=>{
-    axios.post('http://localhost:3001/auth/login', data).then((response) => {
+    axios.post('https://visa-test-5417272958c4.herokuapp.com/auth/login', data).then((response) => {
       if(response.data.error) {
         alert(response.data.error);
       }

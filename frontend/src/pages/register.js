@@ -27,7 +27,7 @@ const Register = () => {
 
   const onSubmit = (data, { setSubmitting }) => {
     const { confirmPassword, ...postData } = data;
-    axios.post('http://localhost:3001/auth', postData)
+    axios.post('https://visa-test-5417272958c4.herokuapp.com/auth', postData)
       .then((response) => {
         console.log('Successful register');
         history('/login');

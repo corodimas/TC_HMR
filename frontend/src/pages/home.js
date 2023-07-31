@@ -34,7 +34,7 @@ function Home() {
   const [listOfPatients, setListOfPatients] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/patient").then((response) => {
+    axios.get("https://visa-test-5417272958c4.herokuapp.com/patient").then((response) => {
       setListOfPatients(response.data);
     });
   }, []);
